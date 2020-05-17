@@ -24,7 +24,6 @@
     font-weight: 500;
 }
 
-
 header.masthead{
     position:relative;
     background-color:#343a40;
@@ -42,15 +41,20 @@ header.masthead .overlay{
     top:0;
     left:0;
     opacity:.3;
-    }
+}
+
+.btn,
+.form-control-lg {
+    border-radius: 10px;
+}
     
 header.masthead h1{
     font-size:2rem;
-    }
+}
     
 .intro{
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .intro-icons{
@@ -67,6 +71,27 @@ header.masthead h1{
 
 .vegan{
     background-color: #ffe4ed96;
+}
+
+.fa-ice-cream{
+    color: #f1ba57;
+}
+
+.fa-dumbbell{
+    color: #7dc124;
+}
+
+.fa-seedling{
+    color: #ef62a8;
+}
+
+a{
+    color: #000000;
+}
+
+a:hover {
+    color: #dc3545;
+    text-decoration: none;
 }
 
 @media (min-width:768px){
@@ -129,6 +154,6 @@ header.masthead h1{
     }
     
 footer.footer{
-    padding-top:4rem;
-    padding-bottom:4rem;
+    padding-top:2rem;
+    padding-bottom:2rem;
     }
