@@ -9,6 +9,22 @@
      font-weight:700;
      }
      
+.caps{
+    text-transform: uppercase;
+}
+
+
+.navbar-brand{
+        font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: large;
+    font-weight: 500;
+}
+
+
 header.masthead{
     position:relative;
     background-color:#343a40;
@@ -34,6 +50,23 @@ header.masthead h1{
     
 .intro{
         padding-top: 5rem;
+        padding-bottom: 5rem;
+}
+
+.intro-icons{
+    color: #f56881;
+}
+
+.dessert{
+    background-color: #f7d6b552;
+}
+
+.protein{
+    background-color: #edffe496;
+}
+
+.vegan{
+    background-color: #ffe4ed96;
 }
 
 @media (min-width:768px){
