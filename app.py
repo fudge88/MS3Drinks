@@ -22,11 +22,11 @@ def recipes():
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        flash("Thanks {}, we'll get back to you shortly!".format(request.form["name"]))
+        flash("Thanks {}, we'll get back to you shortly!".format
+            (request.form["name"]))
         print(request.form["name"])
         print(request.form["email"])
         print(request.form["message"])
-    
     return render_template('contact.html', page_title='Contact')
 
 
