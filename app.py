@@ -1,15 +1,26 @@
 import os
 import json
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect, url_for
 if os.path.exists('env.py'):
     import env
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY')
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+
+mongo = PyMongo(app)
 
 
 @app.route('/')
+@app.route('/get_drinks')
+def get_drinks():
+    return render_template('drinks.html', task=mongo.db.drinks.find())
+
+
+@app.route('/index')
 def index():
     return render_template('index.html')
 

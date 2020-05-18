@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h2>drinks</h2>
+
+{% for drink in drinks %}
+    {{drink.drink_name}}
+    {{drink.description}}
+    {{drink.ingredients}}
+    {{drink.directions}}
+    {{drink.calories}}
+    {{drink.serves}}
+    {{drink.prep_time}}
+    {{drink.img_url}}
+    {{drink.category_id}}
+{% endfor %}
+
+
+{% endblock %}
