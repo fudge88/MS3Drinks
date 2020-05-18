@@ -1,9 +1,12 @@
 import os
 import json
 from flask import Flask, render_template, request, flash
+if os.path.exists('env.py'):
+    import env
+
 
 app = Flask(__name__)
-app.secret_key= 'secretkey'
+app.secret_key = os.environ.get('SECRET_KEY')
 
 
 @app.route('/')
