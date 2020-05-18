@@ -24,6 +24,12 @@
     font-weight: 500;
 }
 
+.btnnav{
+    height: 25px;
+    margin-top: 10px;
+    line-height: 0.5;
+}
+
 header.masthead{
     position:relative;
     background-color:#343a40;
@@ -85,13 +91,26 @@ header.masthead h1{
     color: #ef62a8;
 }
 
-a{
+.footer-links a{
+    color: #dc3545;
+}
+
+.footer-links a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-icons a{
     color: #000000;
 }
 
-a:hover {
+.footer-icons a:hover {
     color: #dc3545;
     text-decoration: none;
+}
+
+.flashes{
+    list-style-type: none;
 }
 
 @media (min-width:768px){
