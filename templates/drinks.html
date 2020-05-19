@@ -1,17 +1,26 @@
 {% extends 'base.html' %} {% block content %}
 <h2>drinks</h2>
 
+<div class="container">
 {% for drink in drinks %}
-    {{drink.drink_name}}
-    {{drink.description}}
-    {{drink.ingredients}}
-    {{drink.directions}}
-    {{drink.calories}}
-    {{drink.serves}}
-    {{drink.prep_time}}
-    {{drink.img_url}}
-    {{drink.category_id}}
-{% endfor %}
-
-
-{% endblock %}
+<div class="row">
+<div class="col-sm-12 col-md-4 sm-12">
+<div class="card" style="width: 18rem;">
+  <img src="{{drink.img_url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+  <h5>{{drink.drink_name}}</h5>
+    <p class="card-text">{{drink.description}}</p><hr>
+        <p><i class="fas fa-clock"></i> {{drink.prep_time}} mins</p>
+    <p><i class="fas fa-users"></i> {{drink.serves}} per serving</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+  {% endfor %}
+  </div>
+            
+{% for drink in drinks %} {{drink.drink_name}} {{drink.description}}
+{{drink.ingredients}} {{drink.directions}} {{drink.calories}} {{drink.serves}}
+{{drink.prep_time}} {{drink.img_url}} {{drink.category_id}} {% endfor %} {%
+endblock %}
