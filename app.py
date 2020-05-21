@@ -20,6 +20,13 @@ def get_drinks():
     return render_template('drinks.html', drinks=mongo.db.drinks.find())
 
 
+@app.route('/add_drinks')
+def add_drinks():
+    return render_template('adddrinks.html')
+
+
+
+
 @app.route('/index')
 def index():
     return render_template('index.html')
