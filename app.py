@@ -22,7 +22,8 @@ def get_drinks():
 
 @app.route('/add_drinks')
 def add_drinks():
-    return render_template('adddrinks.html', categories=mongo.db.drink_categories.find())
+    return render_template('adddrinks.html', 
+    categories=mongo.db.drink_categories.find())
 
 
 @app.route('/insert_drink', methods=['POST'])
@@ -31,6 +32,13 @@ def insert_drink():
     drinks.insert_one(request.form.to_dict())
     return redirect(url_for('get_drinks'))
 
+
+@app.route('/edit_drink/<drink_id>')
+def edit_drink(drink_id):
+    the_drink = mongo.db.drinks.find_one({"_id": ObjectId(drink_id)})
+    all_categories = mongo.db.drink_categories.find()
+    return render_template('editdrinks.html', 
+    drink=the_drink, categories=all_categories)
 
 @app.route('/index')
 def index():

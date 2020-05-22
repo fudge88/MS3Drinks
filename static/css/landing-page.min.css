@@ -13,6 +13,15 @@
     text-transform: uppercase;
 }
 
+.nav ul a.btn, nav ul a.btn-large, 
+nav ul a.btn-small, nav ul a.btn-large, 
+nav ul a.btn-flat, nav ul a.btn-floating {
+    margin-top: 20px;
+}
+
+.nav{
+    background-color: #0000009e;
+}
 
 .navbar-brand{
         font-weight: 600;
@@ -115,11 +124,35 @@ header.masthead h1{
     list-style-type: none;
 }
 
+.card{
+    width: 20rem;
+}
+
+.card .card-image {
+    height: 25rem;
+    position: relative;
+}
+
+.img-position{
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+
+}
+
 .cards{
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 48px;
     border-radius: 15px;
+}
+
+.right-span{
+    float: right;
+}
+
+.card-btns{
+text-align: center;
 }
 
 @media (min-width:768px){
