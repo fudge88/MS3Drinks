@@ -53,6 +53,7 @@ header.masthead .overlay{
 .btn,
 .form-control-lg {
     border-radius: 10px;
+    width: 5em;
 }
     
 header.masthead h1{

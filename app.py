@@ -22,7 +22,7 @@ def get_drinks():
 
 @app.route('/add_drinks')
 def add_drinks():
-    return render_template('adddrinks.html', categories=mongo.db.categories.find())
+    return render_template('adddrinks.html', categories=mongo.db.drink_categories.find())
 
 
 @app.route('/insert_drink', methods=['POST'])
