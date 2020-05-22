@@ -33,12 +33,14 @@ def insert_drink():
     return redirect(url_for('get_drinks'))
 
 
-@app.route('/edit_drink/<drink_id>')
+@app.route('/edit_drink/<drink_id>', methods=['GET', 'POST'])
 def edit_drink(drink_id):
-    the_drink = mongo.db.drinks.find_one({"_id": ObjectId(drink_id)})
-    all_categories = mongo.db.drink_categories.find()
-    return render_template('editdrinks.html', 
-    drink=the_drink, categories=all_categories)
+    if request.method == 'POST':
+        drink = mongo.db.drinks.find_one({"_id": ObjectId(drink_id)})
+        mongo.db.drinks.update_one(drink, {'$set': request.form.to_dict()})
+    return render_template('editdrinks.html', drink=mongo.db.drinks.find_one({"_id": ObjectId(drink_id)}))
+
+
 
 @app.route('/index')
 def index():

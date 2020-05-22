@@ -17,7 +17,7 @@
       <p>{{drink.description}}</p>
     </div>
               <div class="card-btns">
-          <a href="{{ url_for('edit_drink', drink_id=drink._id)}}" type="button" class="btn btn-success"><i class="fas fa-pen"></i></a>
+          <a href="{{ url_for('edit_drink', drink_id=drink._id) }}" type="button" class="btn btn-success"><i class="fas fa-pen"></i></a>
           <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
           </div>
      {% endfor %}
