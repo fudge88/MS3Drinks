@@ -22,9 +22,14 @@ def get_drinks():
 
 @app.route('/add_drinks')
 def add_drinks():
-    return render_template('adddrinks.html')
+    return render_template('adddrinks.html', categories=mongo.db.categories.find())
 
 
+@app.route('/insert_drink', methods=['POST'])
+def insert_drink():
+    drinks = mongo.db.drinks
+    drinks.insert_one(request.form.to_dict())
+    return redirect(url_for('get_drinks'))
 
 
 @app.route('/index')
