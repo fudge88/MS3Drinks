@@ -23,7 +23,7 @@ def get_drinks():
 @app.route('/add_drinks')
 def add_drinks():
     return render_template('adddrinks.html', 
-    categories=mongo.db.drink_categories.find())
+                            categories=mongo.db.drink_categories.find())
 
 
 @app.route('/insert_drink', methods=['POST'])
@@ -38,7 +38,8 @@ def edit_drink(drink_id):
     if request.method == 'POST':
         drink = mongo.db.drinks.find_one({"_id": ObjectId(drink_id)})
         mongo.db.drinks.update_one(drink, {'$set': request.form.to_dict()})
-    return render_template('editdrinks.html', drink=mongo.db.drinks.find_one({"_id": ObjectId(drink_id)}))
+    return render_template('editdrinks.html', drink=mongo.db.drinks.find_one({"_id": ObjectId(drink_id)}),
+                            categories=mongo.db.drink_categories.find())
 
 
 
